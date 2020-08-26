@@ -3,11 +3,13 @@ import MovieItem from './MovieItem';
 
 const Results = ({ movies }) => {
   return (
-    <section className="movieCards">
-      {movies.map((movie) => (
-        <MovieItem key={movie.id} movie={movie}></MovieItem>
-      ))}
-    </section>
+    <div>
+      <section className="movieCards">
+        {movies.map((movie) => (
+          <MovieItem key={movie.id} movie={movie}></MovieItem>
+        ))}
+      </section>
+    </div>
   );
 };
 
