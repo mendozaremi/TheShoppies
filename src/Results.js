@@ -1,11 +1,14 @@
 import React from 'react';
+import MovieItem from './MovieItem';
 
-function Results() {
+const Results = ({ movies }) => {
   return (
-    <div>
-      <h4>Results for BLANK ...</h4>
-    </div>
+    <section className="movieCards">
+      {movies.map((movie) => (
+        <MovieItem key={movie.id} movie={movie}></MovieItem>
+      ))}
+    </section>
   );
-}
+};
 
 export default Results;
