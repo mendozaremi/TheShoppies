@@ -4,11 +4,11 @@ import MovieItem from './MovieItem';
 const Results = ({ movies }) => {
   return (
     <div>
-      <section className="movieCards">
+      <div className="movieCards">
         {movies.map((movie) => (
           <MovieItem key={movie.id} movie={movie}></MovieItem>
         ))}
-      </section>
+      </div>
     </div>
   );
 };
