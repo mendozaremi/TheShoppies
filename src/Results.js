@@ -1,5 +1,6 @@
 import React from 'react';
 import MovieItem from './MovieItem';
+import axios from 'axios';
 
 const Results = ({ movies }) => {
   return (
