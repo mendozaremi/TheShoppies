@@ -1,15 +1,19 @@
 // import React from 'react';
 // import MovieItem from './MovieItem';
-// import axios from 'axios';
+// import Spinner from './Spinner';
 
-// const Results = ({ movies }) => {
-//   return (
+// const Results = ({ items, isLoading }) => {
+//   console.log(`this is movies ${items}`);
+
+//   return isLoading ? (
+//     <Spinner />
+//   ) : (
 //     <div className="movie_container">
-//       <div className="movieCards">
-//         {movies.map((movie) => (
-//           <MovieItem key={movie.id} movie={movie}></MovieItem>
+//       <section className="movieCards">
+//         {items.map((item) => (
+//           <MovieItem key={item.id} item={item}></MovieItem>
 //         ))}
-//       </div>
+//       </section>
 //     </div>
 //   );
 // };

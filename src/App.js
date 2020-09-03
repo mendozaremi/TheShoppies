@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
 import SearchMovies from './SearchMovies';
 // import Nominations from './Nominations';
-import Results from './Results';
+// import Results from './Results';
 import ApiKey from './ApiKey';
 import axios from 'axios';
+import './App.css';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -12,11 +12,12 @@ const App = () => {
 
   useEffect(() => {
     const fetchItems = async () => {
-      const result = await axios(
+      const response = await axios.get(
         `http://www.omdbapi.com/?s=${query}&apikey=${ApiKey}`
       );
-      console.log(result);
-      setMovies(result);
+
+      console.log(`this is response ${response.data.Search}`);
+      setMovies(response.data.Search);
     };
 
     fetchItems();
@@ -25,7 +26,7 @@ const App = () => {
   return (
     <div className="App">
       <SearchMovies getQuery={(q) => setQuery(q)} />
-      {/* <Results movies={movies} /> */}
+      {/* <Results items={items} /> */}
       {/* <Nominations /> */}
     </div>
   );
